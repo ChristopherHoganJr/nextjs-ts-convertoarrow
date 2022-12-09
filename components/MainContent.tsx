@@ -3,11 +3,11 @@ import React, { useState, useRef, useEffect, ReactEventHandler } from "react";
 const MainContent = () => {
   const paraRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const alertRef = React.useRef(null);
-  const popupRef = React.useRef(null);
-  const hoverRef = React.useRef(null);
-  const pToRef = React.useRef(null);
-  const colorValRef = React.useRef(null);
+  const alertRef = useRef<HTMLButtonElement>(null);
+  const popupRef = useRef<HTMLInputElement>(null);
+  const hoverRef = useRef<HTMLSpanElement>(null);
+  const pToRef = useRef<HTMLParagraphElement>(null);
+  const colorValRef = useRef<HTMLInputElement>(null);
 
   const [hovering, setHovering] = useState(Boolean);
 
