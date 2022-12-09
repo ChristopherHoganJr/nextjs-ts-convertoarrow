@@ -15,12 +15,12 @@ const MainContent = () => {
     refName.current.style.backgroundColor = `${colorName}`;
   };
 
-  const hoverThis = (): void => {
+  const hoverThis = (e: ReactEventHandler): void => {
     setHovering(!hovering);
   };
 
   const popupText = (): void => {
-    alert(popupRef?.current.value);
+    alert(popupRef.current?.value);
   };
 
   return (
@@ -69,8 +69,8 @@ const MainContent = () => {
         <span
           ref={hoverRef}
           id='hover-this'
-          onMouseEnter={(e) => hoverThis()}
-          onMouseLeave={(e) => hoverThis()}>
+          onMouseEnter={(e) => hoverThis(e)}
+          onMouseLeave={(e) => hoverThis(e)}>
           <b>this.</b>
         </span>
       </p>
@@ -78,7 +78,7 @@ const MainContent = () => {
         ref={pToRef}
         id='pToChange'
         onClick={() =>
-          changeBackground(pToRef, String(colorValRef?.current.value))
+          changeBackground(pToRef, String(colorValRef.current?.value))
         }>
         Another task: This should be another feature. I want to click anywhere
         in this paragraph tag and I want to be able to change the background
